@@ -25,5 +25,6 @@ Nest
    nest/all_nested_indices.rst
    nest/map.rst
    nest/nested_map.rst
+   nest/nested_any.rst
    nest/copy_nest.rst
 
