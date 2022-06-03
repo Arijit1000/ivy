@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,12 +51,34 @@
 <li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deep_dive.html">Deep Dive</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="building_the_docs.html">Building the Docs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="functional/ivy.html">Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/compilation.html">Compilation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/creation.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/data_type.html">Data type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/general.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/linear_algebra.html">Linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/losses.html">Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/manipulation.html">Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/meta.html">Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/nest.html">Nest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/random.html">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/searching.html">Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/statistical.html">Statistical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/utility.html">Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul>
@@ -106,9 +129,16 @@
            <div itemprop="articleBody">
              
   <section id="design">
-<h1>Design<a class="headerlink" href="#design" title="Permalink to this headline"></a></h1>
+<h1>Design<a class="headerlink" href="#design" title="Permalink to this heading"></a></h1>
+<p>This section is aimed at general users, who would like to learn how to use Ivy,
+and are less concerned about how it all works under the hood 🔧</p>
+<p>The <a class="reference internal" href="deep_dive.html#deep-dive"><span class="std std-ref">Deep Dive</span></a> section is more targetted at potential contributors,
+and at users who would like to dive deeper into the weeds of the framework🌱,
+and gain a better understanding of what is actually going on behind the scenes 🎬</p>
+<p>If that sounds like you, feel free to check out the <a class="reference internal" href="deep_dive.html#deep-dive"><span class="std std-ref">Deep Dive</span></a> section
+after you’ve gone through the higher level overview which is covered in this <em>design</em> section!</p>
 <div class="line-block">
-<div class="line">Ivy can fulfill two distinct purposes:</div>
+<div class="line">So, starting off with our higher level <em>design</em> section, Ivy can fulfill two distinct purposes:</div>
 <div class="line"><br /></div>
 <div class="line">1. enable automatic code conversions between frameworks</div>
 <div class="line">2. serve as a new ML framework with multi-framework support</div>

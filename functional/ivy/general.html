@@ -15,6 +15,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -45,101 +46,98 @@
 <li class="toctree-l1"><a class="reference internal" href="../../extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deep_dive.html">Deep Dive</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../building_the_docs.html">Building the Docs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../ivy.html">Ivy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="activations.html">Activations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="compilation.html">Compilation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creation.html">Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_type.html">Data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device.html">Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elementwise.html">Elementwise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">General</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="general/get_referrers_recursive.html">get_referrers_recursive</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/is_native_array.html">is_native_array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/is_ivy_array.html">is_ivy_array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/is_array.html">is_array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/is_ivy_container.html">is_ivy_container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/copy_array.html">copy_array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/array_equal.html">array_equal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/arrays_equal.html">arrays_equal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/all_equal.html">all_equal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/to_numpy.html">to_numpy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/to_scalar.html">to_scalar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/to_list.html">to_list</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/clip_vector_norm.html">clip_vector_norm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/clip_matrix_norm.html">clip_matrix_norm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/floormod.html">floormod</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/unstack.html">unstack</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/fourier_encode.html">fourier_encode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/value_is_nan.html">value_is_nan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/has_nans.html">has_nans</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/exists.html">exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/default.html">default</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/shape_to_tuple.html">shape_to_tuple</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/try_else_none.html">try_else_none</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/arg_names.html">arg_names</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/match_kwargs.html">match_kwargs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/cache_fn.html">cache_fn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/current_framework_str.html">current_framework_str</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/einops_rearrange.html">einops_rearrange</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/einops_reduce.html">einops_reduce</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/einops_repeat.html">einops_repeat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/get_min_denominator.html">get_min_denominator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/set_min_denominator.html">set_min_denominator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/get_min_base.html">get_min_base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/set_min_base.html">set_min_base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/stable_divide.html">stable_divide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/stable_pow.html">stable_pow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/get_all_arrays_in_memory.html">get_all_arrays_in_memory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/num_arrays_in_memory.html">num_arrays_in_memory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/print_all_arrays_in_memory.html">print_all_arrays_in_memory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/set_queue_timeout.html">set_queue_timeout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/queue_timeout.html">queue_timeout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/tmp_dir.html">tmp_dir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/set_tmp_dir.html">set_tmp_dir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/container_types.html">container_types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/inplace_arrays_supported.html">inplace_arrays_supported</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/inplace_variables_supported.html">inplace_variables_supported</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/supports_inplace.html">supports_inplace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/assert_supports_inplace.html">assert_supports_inplace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/inplace_update.html">inplace_update</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/inplace_decrement.html">inplace_decrement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/inplace_increment.html">inplace_increment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/cumsum.html">cumsum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/cumprod.html">cumprod</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/scatter_flat.html">scatter_flat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/scatter_nd.html">scatter_nd</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/gather.html">gather</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/gather_nd.html">gather_nd</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/multiprocessing.html">multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/indices_where.html">indices_where</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/one_hot.html">one_hot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/shape.html">shape</a></li>
-<li class="toctree-l3"><a class="reference internal" href="general/get_num_dims.html">get_num_dims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creation.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_type.html">Data type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elementwise.html">Elementwise</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="general/get_referrers_recursive.html">get_referrers_recursive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/is_native_array.html">is_native_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/is_ivy_array.html">is_ivy_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/is_array.html">is_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/is_ivy_container.html">is_ivy_container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/copy_array.html">copy_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/array_equal.html">array_equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/arrays_equal.html">arrays_equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/all_equal.html">all_equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/to_numpy.html">to_numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/to_scalar.html">to_scalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/to_list.html">to_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/clip_vector_norm.html">clip_vector_norm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/clip_matrix_norm.html">clip_matrix_norm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/floormod.html">floormod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/unstack.html">unstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/fourier_encode.html">fourier_encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/value_is_nan.html">value_is_nan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/has_nans.html">has_nans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/exists.html">exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/default.html">default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/shape_to_tuple.html">shape_to_tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/try_else_none.html">try_else_none</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/arg_names.html">arg_names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/match_kwargs.html">match_kwargs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/cache_fn.html">cache_fn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/current_backend_str.html">current_backend_str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/einops_rearrange.html">einops_rearrange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/einops_reduce.html">einops_reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/einops_repeat.html">einops_repeat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/get_min_denominator.html">get_min_denominator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/set_min_denominator.html">set_min_denominator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/get_min_base.html">get_min_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/set_min_base.html">set_min_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/stable_divide.html">stable_divide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/stable_pow.html">stable_pow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/get_all_arrays_in_memory.html">get_all_arrays_in_memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/num_arrays_in_memory.html">num_arrays_in_memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/print_all_arrays_in_memory.html">print_all_arrays_in_memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/set_queue_timeout.html">set_queue_timeout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/queue_timeout.html">queue_timeout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/tmp_dir.html">tmp_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/set_tmp_dir.html">set_tmp_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/container_types.html">container_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_arrays_supported.html">inplace_arrays_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_variables_supported.html">inplace_variables_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/supports_inplace.html">supports_inplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/assert_supports_inplace.html">assert_supports_inplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_update.html">inplace_update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_decrement.html">inplace_decrement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_increment.html">inplace_increment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/cumsum.html">cumsum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/cumprod.html">cumprod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/scatter_flat.html">scatter_flat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/scatter_nd.html">scatter_nd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/gather.html">gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/gather_nd.html">gather_nd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/multiprocessing.html">multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/indices_where.html">indices_where</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/one_hot.html">one_hot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/shape.html">shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/get_num_dims.html">get_num_dims</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="gradients.html">Gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layers.html">Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html">Linear algebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="losses.html">Losses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Manipulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meta.html">Meta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nest.html">Nest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="norms.html">Norms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">Random</a></li>
-<li class="toctree-l2"><a class="reference internal" href="searching.html">Searching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="set.html">Set</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sorting.html">Sorting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical.html">Statistical</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utility.html">Utility</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="losses.html">Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation.html">Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta.html">Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nest.html">Nest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random.html">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="searching.html">Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical.html">Statistical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul>
@@ -179,8 +177,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../ivy.html">Ivy</a> &raquo;</li>
-      <li>General</li>
+                <li>General</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/functional/ivy/general.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -191,7 +188,7 @@
            <div itemprop="articleBody">
              
   <section id="module-ivy.functional.ivy.general">
-<span id="general"></span><h1>General<a class="headerlink" href="#module-ivy.functional.ivy.general" title="Permalink to this headline"></a></h1>
+<span id="general"></span><h1>General<a class="headerlink" href="#module-ivy.functional.ivy.general" title="Permalink to this heading"></a></h1>
 <p>Collection of general Ivy functions.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.all_equal">
@@ -341,7 +338,7 @@ cached output is returned.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.clip_vector_norm">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">clip_vector_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_norm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#clip_vector_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.clip_vector_norm" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">clip_vector_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_norm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#clip_vector_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.clip_vector_norm" title="Permalink to this definition"></a></dt>
 <dd><p>Clips (limits) the vector p-norm of an array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -397,7 +394,7 @@ items().</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.cumprod">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">cumprod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumprod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumprod" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">cumprod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumprod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumprod" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the cumulative product of the elements along a given axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -418,7 +415,7 @@ items().</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.cumsum">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">cumsum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumsum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumsum" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">cumsum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumsum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumsum" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the cumulative sum of the elements along a given axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -438,8 +435,8 @@ items().</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="ivy.functional.ivy.general.current_framework_str">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">current_framework_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#current_framework_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.current_framework_str" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ivy.functional.ivy.general.current_backend_str">
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">current_backend_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#current_backend_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.current_backend_str" title="Permalink to this definition"></a></dt>
 <dd><p>Summary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -557,7 +554,7 @@ items().</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.floormod">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">floormod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#floormod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.floormod" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">floormod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#floormod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.floormod" title="Permalink to this definition"></a></dt>
 <dd><p>Returns element-wise remainder of division.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -607,7 +604,7 @@ channel.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.gather">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">gather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">gather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather" title="Permalink to this definition"></a></dt>
 <dd><p>Gather slices from params at axis according to indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -615,7 +612,7 @@ channel.</p>
 <li><p><strong>params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array, the array from which to gather values.</p></li>
 <li><p><strong>indices</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array, index array.</p></li>
 <li><p><strong>axis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – optional int, the axis from which to gather from. Default is -1. (default: <code class="docutils literal notranslate"><span class="pre">-1</span></code>)</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – optional ivy.Device, device on which to create the array ‘cuda:0’, ‘cuda:1’, (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – optional ivy.Device, device on which to create the array ‘cuda:0’, ‘cuda:1’, (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 ‘cpu’ etc. Same as x if None.</p></li>
 <li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]]) – optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
@@ -632,14 +629,14 @@ axis.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.gather_nd">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">gather_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather_nd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather_nd" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">gather_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather_nd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather_nd" title="Permalink to this definition"></a></dt>
 <dd><p>Gather slices from params into a array with shape specified by indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – The array from which to gather values.</p></li>
 <li><p><strong>indices</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – Index array.</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 None.</p></li>
 </ul>
 </dd>
@@ -821,12 +818,15 @@ array classes in the backend, when the backend supports this.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – The variable to update.</p></li>
-<li><p><strong>val</strong> – The array to update the variable with.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – The variable to update.</p></li>
+<li><p><strong>val</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – The array to update the variable with.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>ret</em> – The array following the in-place update.</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>ret</em> – The array following the in-place update.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -948,7 +948,7 @@ Default is False.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.multiprocessing">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">multiprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#multiprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.multiprocessing" title="Permalink to this definition"></a></dt>
-<dd><p>Return framework-specific multiprocessing module.</p>
+<dd><p>Return backend-specific multiprocessing module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>context</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The context of the multiprocessing, either fork, forkserver or spawn. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
@@ -968,14 +968,14 @@ Default is None.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.one_hot">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">one_hot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#one_hot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.one_hot" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">one_hot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#one_hot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.one_hot" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a one-hot array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>indices</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – Indices for where the ones should be scattered <em>[batch_shape, dim]</em></p></li>
 <li><p><strong>depth</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Scalar defining the depth of the one-hot dimension.</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 None.</p></li>
 </ul>
 </dd>
@@ -1004,7 +1004,7 @@ overrides.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.scatter_flat">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">scatter_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_flat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_flat" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">scatter_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_flat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_flat" title="Permalink to this definition"></a></dt>
 <dd><p>Scatter flat updates into a new flat array according to flat indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1016,7 +1016,7 @@ overrides.</p>
 size is used to
 scatter into a zeros array.</p></li>
 <li><p><strong>reduction</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The reduction method for the scatter, one of ‘sum’, ‘min’, ‘max’ or ‘replace’ (default: <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>)</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 updates if None.</p></li>
 </ul>
 </dd>
@@ -1031,7 +1031,7 @@ updates if None.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.scatter_nd">
-<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">scatter_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_nd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_nd" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">scatter_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_nd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_nd" title="Permalink to this definition"></a></dt>
 <dd><p>Scatter updates into a new array according to indices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1044,7 +1044,7 @@ provided.</p></li>
 shape arg is used to
 scatter into a zeros array.</p></li>
 <li><p><strong>reduction</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The reduction method for the scatter, one of ‘sum’, ‘min’, ‘max’ or ‘replace’ (default: <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>)</p></li>
-<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>device</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDevice</span></code>]]) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 updates if None.</p></li>
 </ul>
 </dd>
@@ -1132,7 +1132,9 @@ function being called is 10 seconds.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_tensor</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">as_tensor</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y_tuple</span><span class="p">)</span>
 <span class="go">(2, 3)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y_tensor</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y_tensor</span><span class="p">)</span>
 <span class="go">ivy.array([2, 3])</span>
 </pre></div>
 </div>
@@ -1235,7 +1237,9 @@ for numerical stability.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">[-1, 0, 1]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -1260,8 +1264,10 @@ for numerical stability.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">array([-1, 0, 1])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="go">[-1 0 1]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="go">&lt;class &#39;numpy.ndarray&#39;&gt;</span>
 </pre></div>
 </div>
@@ -1287,7 +1293,9 @@ for numerical stability.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_scalar</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">-1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">is_int_dtype</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
 </div>
