@@ -174,7 +174,7 @@ implementation.</p>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The backend-specific implementation of <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code>  for PyTorch in
@@ -223,7 +223,7 @@ To support backends that do not have a backend-specific implementation,
 a compositional implementation is also provided in <code class="code docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>.
 Because these functions include both a compositional implementation and also at least one backend-specific
 implementation, these functions are refered to as <em>mixed</em>.</p>
-<p>When using ivy without a backend set explicitly (for example <code class="code docutils literal notranslate"><span class="pre">ivy.set_framework()</span></code> has not been called),
+<p>When using ivy without a backend set explicitly (for example <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend()</span></code> has not been called),
 then the function called is always the one implemented in <code class="code docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>.
 For <em>primary</em> functions, then <code class="code docutils literal notranslate"><span class="pre">ivy.current_backend(array_arg).func_name(...)</span></code>
 will call the backend-specific implementation in <code class="code docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code>
@@ -232,7 +232,7 @@ directly. However, as just explained, <em>mixed</em> functions implement a compo
 Therefore, when no backend is explicitly set,
 then the compositional implementation is always used for <em>mixed</em> functions,
 even for backends that have a more efficient backend-specific implementation.
-Typically the backend should always be set explicitly though (using <code class="code docutils literal notranslate"><span class="pre">ivy.set_framework()</span></code> for example),
+Typically the backend should always be set explicitly though (using <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend()</span></code> for example),
 and in this case the efficient backend-specific implementation will always be used if it exists.</p>
 </section>
 <section id="standalone-functions">
@@ -297,6 +297,11 @@ and <a class="reference external" href="https://github.com/unifyai/ivy/blob/f18d
 and <a class="reference external" href="https://github.com/unifyai/ivy/blob/30b7ca4f8a50a52f51884738fe7323883ce891bd/ivy/functional/ivy/nest.py#L15">ivy.index_nest</a> which enables an arbitrary nest to be recursively indexed.</p>
 <p>There are many other examples. The convenience functions are not grouped by file or folder.
 Feel free to have a look through all of the <a class="reference external" href="https://github.com/unifyai/ivy/tree/30b7ca4f8a50a52f51884738fe7323883ce891bd/ivy/functional/ivy">submodules</a>, you should be able to spot quite a few!</p>
+<p><strong>Round Up</strong></p>
+<p>This should have hopefully given you a good feel for the different function types.</p>
+<p>If you’re ever unsure of how best to proceed,
+please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1312">function types discussion</a>,
+or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982737839861145630">function types channel</a>!</p>
 </section>
 </section>
 

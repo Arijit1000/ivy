@@ -149,9 +149,14 @@
   <section id="docstring-examples">
 <h1>Docstring Examples<a class="headerlink" href="#docstring-examples" title="Permalink to this heading"></a></h1>
 <p>After writing the general docstring, the final step is to add helpful examples to the docstring.</p>
-<p>There are two types of examples. There are <em>functional</em> examples, which show the function being called like so
-<code class="code docutils literal notranslate"><span class="pre">ivy.func_name(...)</span></code></p>
-<p>There are also <em>instance method</em> examples which are called like so <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code></p>
+<p>There are three types of examples. There are <em>functional</em> examples, which show the function being called like so
+<code class="code docutils literal notranslate"><span class="pre">ivy.func_name(...)</span></code>, there are <em>instance method</em> examples,
+show the method being called like so <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code>,
+and there are also <em>operator</em> examples,
+which show an operation being performed like so <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>.</p>
+<p>The first two example types are very common, while the latter is, unsurprisingly,
+only relevant for <em>operator</em> functions
+such as <code class="code docutils literal notranslate"><span class="pre">ivy.add</span></code>, <cite>ivy.subtract</cite>, <code class="code docutils literal notranslate"><span class="pre">ivy.multiply</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy.divide</span></code>.</p>
 <p><strong>Functional Examples</strong></p>
 <p>Firstly, we should include <em>functional</em> examples with <code class="code docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the input.</p>
 <p>These should:</p>
@@ -163,11 +168,11 @@ variations for a single argument, and not the entire grid of variations across a
 <li><p>vary the values and input shapes considerably between examples</p></li>
 <li><p>start with the simplest examples first. For example, this means using the default values for all optional arguments
 in the first example, and using small arrays, with a small number of dimensions, and with <em>simple</em> values for the
-function in question.</p></li>
+function in question</p></li>
 <li><p>show an example with: (a) <code class="code docutils literal notranslate"><span class="pre">out</span></code> unused, (b) <code class="code docutils literal notranslate"><span class="pre">out</span></code> used to update a new array <code class="code docutils literal notranslate"><span class="pre">y</span></code>,
 and (c) <code class="code docutils literal notranslate"><span class="pre">out</span></code> used to inplace update the input array <code class="code docutils literal notranslate"><span class="pre">x</span></code></p></li>
 <li><p>If broadcasting is relevant for the function, then show examples which highlight this.
-For example, passing in different shapes for two array arguments.</p></li>
+For example, passing in different shapes for two array arguments</p></li>
 </ol>
 <p>For all remaining examples, we can repeat input values from these <code class="code docutils literal notranslate"><span class="pre">ivy.Array</span></code> <em>functional</em>
 examples covered by points 1-5.</p>
@@ -184,11 +189,11 @@ of the function. The purpose is not to provide an excessive number of variations
 </ol>
 <p>Going further, for <em>nestable</em> functions there should be an example that:</p>
 <ol class="arabic simple" start="8">
-<li><p>passes in <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances in place of all array arguments</p></li>
+<li><p>passes in an <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance in place of one of the arguments</p></li>
 </ol>
 <p>For <em>nestable</em> functions which accept more than one argument, there should also be an example that:</p>
 <ol class="arabic simple" start="9">
-<li><p>passes in a combination of <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> and non-container instances.</p></li>
+<li><p>passes in <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances for multiple arguments</p></li>
 </ol>
 <p><strong>Instance Method Examples</strong></p>
 <p><em>Instance method</em> examples are of course only relevant if an instance method for the function exists.
@@ -307,7 +312,7 @@ ivy.array([0., 1.5574077, -2.1850398])
 </pre></div>
 </div>
 <p>We then also add an example with an <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> input, in order to satisfy point 8.
-Point 9 is not relevant as there is only one array input
+Point 9 is not relevant as there is only one input argument
 (excluding <code class="code docutils literal notranslate"><span class="pre">out</span></code> which does not count, as it essentially acts as an output)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :code:`ivy.Container` input:
 
@@ -414,9 +419,7 @@ Point 7 is not relevant as there is only one array input
 ivy.array([2., 0., 1.])
 </pre></div>
 </div>
-<p>We then also add an example with an <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> input, in order to satisfy point 8.
-Point 9 is not relevant as there is again only one array input
-(excluding <code class="code docutils literal notranslate"><span class="pre">out</span></code> which does not count, as it essentially acts as an output).</p>
+<p>We then also add an example with an <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> for one of the inputs, in order to satisfy point 8.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :code:`ivy.Container` input:
 
 &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
@@ -426,6 +429,23 @@ Point 9 is not relevant as there is again only one array input
 {
     a: ivy.array([2., 0., 1.]),
     b: ivy.array([5., 3., 4.])
+}
+</pre></div>
+</div>
+<p>Unlike <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code>, point 9 is relevant in this case,
+as there are three function inputs in total (exluding <code class="code docutils literal notranslate"><span class="pre">out</span></code>).
+We can therefore add an example with multiple <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs,
+in order to satisfy point 9.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :code:`ivy.Container` input:
+
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
+                      b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; shift = ivy.Container(a=1, b=-1)
+&gt;&gt;&gt; y = ivy.roll(x, shift)
+&gt;&gt;&gt; print(y)
+{
+    a: ivy.array([2., 0., 1.]),
+    b: ivy.array([4., 5., 3.])
 }
 </pre></div>
 </div>
@@ -530,24 +550,7 @@ We also add an example with a mix of <code class="code docutils literal notransl
 ivy.array([5, 7, 9])
 </pre></div>
 </div>
-<p>We then also add an example with <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs, in order to satisfy point 8.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :code:`ivy.Container` input:
-
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),\
-                      b=ivy.array([2, 3, 4]))
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),\
-                      b=ivy.array([5, 6, 7]))
-&gt;&gt;&gt; z = ivy.add(x, y)
-&gt;&gt;&gt; print(z)
-{
-    a: ivy.array([5, 7, 9]),
-    b: ivy.array([7, 9, 11])
-}
-</pre></div>
-</div>
-<p>Again, unlike <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy.roll</span></code> above, point 9 is relevant in this case,
-as there are two array inputs.
-We also add an example with a mix of <code class="code docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs, in order to satisfy point 9.</p>
+<p>We then also add an example with an <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> for one of the inputs, in order to satisfy point 8.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With a mix of :code:`ivy.Array` and :code:`ivy.Container` inputs:
 
 &gt;&gt;&gt; x = ivy.array([[1.1, 2.3, -3.6]])
@@ -562,6 +565,24 @@ We also add an example with a mix of <code class="code docutils literal notransl
     b: ivy.array([[6.1, 7.3, 1.4],
                   [7.1, 8.3, 2.4],
                   [8.1, 9.3, 3.4]])
+}
+</pre></div>
+</div>
+<p>Again, unlike <code class="code docutils literal notranslate"><span class="pre">ivy.tan</span></code>, point 9 is relevant in this case,
+as there are two function inputs in total (exluding <code class="code docutils literal notranslate"><span class="pre">out</span></code>).
+We can therefore add an example with multiple <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs,
+in order to satisfy point 9.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :code:`ivy.Container` input:
+
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),\
+                      b=ivy.array([2, 3, 4]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),\
+                      b=ivy.array([5, 6, 7]))
+&gt;&gt;&gt; z = ivy.add(x, y)
+&gt;&gt;&gt; print(z)
+{
+    a: ivy.array([5, 7, 9]),
+    b: ivy.array([7, 9, 11])
 }
 </pre></div>
 </div>
@@ -638,9 +659,12 @@ With mix of :code:`ivy.Array` and :code:`ivy.Container` instances:
 <p><strong>Round Up</strong></p>
 <p>These three examples should give you a good understanding of what is required when adding docsting examples.</p>
 <p>If you’re ever unsure of how best to proceed,
-please check out the discussions on the <a class="reference external" href="https://github.com/unifyai/ivy">repo</a> for FAQs,
-and reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> if you have any questions!</p>
-</section>
+please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1322">docstring examples discussion</a>,
+or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738352103129098">docstring examples channel</a>!</p>
+<p><strong>Video</strong></p>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/rtce8XthiKA">
+</iframe></section>
 </section>
 
 
