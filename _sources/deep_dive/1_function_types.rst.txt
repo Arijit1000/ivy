@@ -32,7 +32,7 @@ Function Types
 
 Firstly, we explain the difference between *primary*, *compositional*, *mixed* and *standalone* functions.
 These four function categorizations are all **mutually exclusive**,
-and combined they consitute the set of **all** functions in Ivy, as outlined in the simple Venn diagram below.
+and combined they constitute the set of **all** functions in Ivy, as outlined in the simple Venn diagram below.
 
 .. image:: https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/four_function_types.png?raw=true
    :align: center
@@ -120,7 +120,7 @@ Some functions have some backend-specific implementations in
 To support backends that do not have a backend-specific implementation,
 a compositional implementation is also provided in :code:`ivy/functional/ivy/category_name.py`.
 Because these functions include both a compositional implementation and also at least one backend-specific
-implementation, these functions are refered to as *mixed*.
+implementation, these functions are referred to as *mixed*.
 
 When using ivy without a backend set explicitly (for example :code:`ivy.set_backend()` has not been called),
 then the function called is always the one implemented in :code:`ivy/functional/ivy/category_name.py`.
@@ -140,7 +140,7 @@ Standalone Functions
 *Standalone* functions are functions which do not reference any other *primary*,
 *compositional* or *mixed* functions whatsoever.
 
-By definition, standalone functions can only reference themselves or other standlone functions.
+By definition, standalone functions can only reference themselves or other standalone functions.
 Most commonly, these functions are *convenience* functions (see below).
 
 As a first example, every function in the `nest.py`_ module is a standalone function.
@@ -158,7 +158,7 @@ Nestable Functions
 
 *Nestable* functions are functions which can accept :code:`ivy.Container` instances in place
 of **any** of the arguments. Multiple containers can also be passed in for multiple arguments at the same time,
-provided that the containers share the same nested structure.
+provided that the containers share a common nested structure.
 If an :code:`ivy.Container` is passed, then the function is applied to all of the
 leaves of the container, with the container leaf values passed into the function at the corresponding arguments.
 In this case, the function will return an :code:`ivy.Container` in the output.
@@ -182,7 +182,9 @@ in the :code:`ivy` module during `backend setting`_.
 This function wrapping process is covered in a bit more detail in the :ref:`Function Wrapping` section.
 
 Under the hood, the :code:`ivy.Container` API static methods are called when :code:`ivy.Container` instances are passed
-in as inputs to functions in the functional API. This is explained in more detail in the :ref:`Containers` section.
+in as inputs to functions in the functional API.
+
+Nestable functions are explained in more detail in the :ref:`Containers` section.
 
 Convenience Functions
 ---------------------
