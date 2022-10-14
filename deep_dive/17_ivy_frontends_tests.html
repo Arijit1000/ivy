@@ -125,14 +125,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -848,11 +848,9 @@ are being tested.</p>
 </div>
 <ul class="simple">
 <li><p>We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.value_test()</span></code> to test the special method.</p></li>
-<li><p>We use the frontend class <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceArray</span></code> to calculate jax frontend special method’s result, which is then compared</p></li>
+<li><p>We use the frontend class <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceArray</span></code> to calculate jax frontend special method’s result, which is then compared to the regular frontend function’s result, when passed into the <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.value_test()</span></code>.</p></li>
+<li><p>We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.value_test()</span></code>,which takes an argument <code class="code docutils literal notranslate"><span class="pre">ground_truth_backend</span></code> which is the frontend that is to be tested.</p></li>
 </ul>
-<p>to the regular frontend function’s result, when passed into the <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.value_test()</span></code>.
-* We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.value_test()</span></code>,which takes an argument <code class="code docutils literal notranslate"><span class="pre">ground_truth_backend</span></code> which is the frontend that is
-to be tested.</p>
 </section>
 </section>
 <section id="hypothesis-helpers">
