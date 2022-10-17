@@ -81,14 +81,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -11792,6 +11792,46 @@
     <span class="k">pass</span></div>
 
 
+<div class="viewcode-block" id="fmax"><a class="viewcode-back" href="../../../functional/ivy/extensions/fmax/fmax_container.html#ivy.container.container_methods.fmax">[docs]</a><span class="k">def</span> <span class="nf">fmax</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="n">x2</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;ivy.Container instance method variant of ivy.fmax. This method simply</span>
+<span class="sd">    wraps the function, and so the docstring for ivy.fmax also applies to this</span>
+<span class="sd">    method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">        container with the first input arrays.</span>
+<span class="sd">    x2</span>
+<span class="sd">        container with the second input arrays</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output container, for writing the result to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Container including arrays with element-wise maximums.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x1 = ivy.Container(a=ivy.array([2, 3, 4]),\</span>
+<span class="sd">                           b=ivy.array([ivy.nan, 0, ivy.nan]))</span>
+<span class="sd">    &gt;&gt;&gt; x2 = ivy.Container(a=ivy.array([1, 5, 2]),\</span>
+<span class="sd">                           b=ivy.array([0, ivy.nan, ivy.nan]))</span>
+<span class="sd">    &gt;&gt;&gt; x1.fmax(x2)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([ 2.,  5.,  4.])</span>
+<span class="sd">        b: ivy.array([ 0,  0,  nan])</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
 <span class="c1">#ivy.container.general</span>
 <span class="c1"># global</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
@@ -12714,10 +12754,8 @@
 
 
 <div class="viewcode-block" id="static_all_equal"><a class="viewcode-back" href="../../../functional/ivy/general/all_equal/static_all_equal_container.html#ivy.container.container_methods.static_all_equal">[docs]</a><span class="k">def</span> <span class="nf">static_all_equal</span><span class="p">(</span>
-    <span class="n">x1</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-    <span class="n">x2</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-    <span class="o">/</span><span class="p">,</span>
-    <span class="o">*</span><span class="p">,</span>
+    <span class="n">x1</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">xs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="n">equality_matrix</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -12733,8 +12771,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    x1</span>
 <span class="sd">        input container.</span>
-<span class="sd">    x2</span>
-<span class="sd">        array or container to be compared to ``x1``.</span>
+<span class="sd">    xs</span>
+<span class="sd">        arrays or containers to be compared to ``x1``.</span>
 <span class="sd">    equality_matrix</span>
 <span class="sd">        Whether to return a matrix of equalities comparing each input with every</span>
 <span class="sd">        other. Default is ``False``.</span>
@@ -12788,9 +12826,7 @@
 
 <div class="viewcode-block" id="all_equal"><a class="viewcode-back" href="../../../functional/ivy/general/all_equal/all_equal_container.html#ivy.container.container_methods.all_equal">[docs]</a><span class="k">def</span> <span class="nf">all_equal</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-    <span class="n">x2</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
-    <span class="o">/</span><span class="p">,</span>
-    <span class="o">*</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">xs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
     <span class="n">equality_matrix</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -12806,8 +12842,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    self</span>
 <span class="sd">        input container.</span>
-<span class="sd">    x2</span>
-<span class="sd">        array or container to be compared to ``self``.</span>
+<span class="sd">    xs</span>
+<span class="sd">        arrays or containers to be compared to ``self``.</span>
 <span class="sd">    equality_matrix</span>
 <span class="sd">        Whether to return a matrix of equalities comparing each input with every</span>
 <span class="sd">        other. Default is ``False``.</span>
