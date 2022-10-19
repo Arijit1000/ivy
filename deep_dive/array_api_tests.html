@@ -82,14 +82,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -159,8 +159,8 @@ adherence to the standard on a continuous basis.</p>
 functions which are part of the standard. If a test fails on the CI, you can see details about the failure under
 <cite>Details -&gt; Run [backend] Tests</cite>.</p>
 <p>You can also run the tests locally before making a PR. There are two ways to do this: by the terminal or using your IDE.</p>
-<section id="using-the-bash-file-runs-docker">
-<h3>Using the bash file (runs Docker)<a class="headerlink" href="#using-the-bash-file-runs-docker" title="Permalink to this heading"></a></h3>
+<section id="using-terminal">
+<h3>Using Terminal<a class="headerlink" href="#using-terminal" title="Permalink to this heading"></a></h3>
 <p>Using the terminal, you can run all array-api tests in a given file for a certain backend using the bash file <a class="reference external" href="https://github.com/unifyai/ivy/blob/d76f0f5ab02d608864eb2c4012af2404da5806c2/test_array_api.sh">test_array_api.sh</a>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># /ivy
 # /bin/bash -e ./run_tests_CLI/test_array_api.sh  &lt;insert_chosen_backend&gt; test_&lt;category&gt;
