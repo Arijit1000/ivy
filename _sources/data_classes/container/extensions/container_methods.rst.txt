@@ -13,6 +13,8 @@ Container methods
    :maxdepth: -1
    :caption: Container methods
 
+   container_methods/static_triu_indices.rst
+   container_methods/triu_indices.rst
    container_methods/static_sinc.rst
    container_methods/sinc.rst
    container_methods/static_lcm.rst
@@ -37,6 +39,8 @@ Container methods
    container_methods/pad.rst
    container_methods/static_kaiser_bessel_derived_window.rst
    container_methods/kaiser_bessel_derived_window.rst
+   container_methods/static_hamming_window.rst
+   container_methods/hamming_window.rst
    container_methods/static_diagflat.rst
    container_methods/diagflat.rst
    container_methods/static_moveaxis.rst
