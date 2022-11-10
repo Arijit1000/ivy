@@ -14,4 +14,6 @@ Statistical
    :caption: Statistical
 
    statistical/median.rst
+   statistical/nanmean.rst
+   statistical/unravel_index.rst
 
