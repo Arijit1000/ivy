@@ -21,6 +21,7 @@ Experimental
    experimental/avg_pool3d.rst
    experimental/dct.rst
    experimental/fft.rst
+   experimental/dropout1d.rst
    experimental/isin.rst
    experimental/msort.rst
    experimental/triu_indices.rst
@@ -36,6 +37,7 @@ Experimental
    experimental/dirichlet.rst
    experimental/beta.rst
    experimental/gamma.rst
+   experimental/binary_cross_entropy_with_logits.rst
    experimental/flatten.rst
    experimental/moveaxis.rst
    experimental/ndenumerate.rst
@@ -70,6 +72,7 @@ Experimental
    experimental/trapz.rst
    experimental/float_power.rst
    experimental/exp2.rst
+   experimental/copysign.rst
    experimental/count_nonzero.rst
    experimental/nansum.rst
    experimental/gcd.rst
