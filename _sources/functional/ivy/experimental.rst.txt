@@ -65,6 +65,7 @@ Experimental
    experimental/quantile.rst
    experimental/diagflat.rst
    experimental/kron.rst
+   experimental/eig.rst
    experimental/sinc.rst
    experimental/lcm.rst
    experimental/fmod.rst
@@ -82,7 +83,7 @@ Experimental
    experimental/nan_to_num.rst
    experimental/logaddexp2.rst
    experimental/signbit.rst
-   experimental/diff.rst
+   experimental/diff_.rst
    experimental/allclose.rst
    experimental/fix.rst
    experimental/nextafter.rst
