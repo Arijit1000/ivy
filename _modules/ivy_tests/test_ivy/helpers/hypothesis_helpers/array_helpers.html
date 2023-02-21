@@ -100,7 +100,10 @@
 <p class="caption" role="heading"><span class="caption-text">Utils</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../utils/backend.html">Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../utils/assertions.html">Assertions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../utils/dynamic_import.html">Dynamic import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../utils/inspection.html">Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../utils/verbosity.html">Verbosity</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testing</span></p>
 <ul>
@@ -1195,7 +1198,9 @@
             <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s2">&quot;bfloat16&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="c1"># enables bfloat16 behavior with possibly no side-effects</span>
-            <span class="kn">import</span> <span class="nn">paddle_bfloat</span>  <span class="c1"></span>
+
+            <span class="kn">import</span> <span class="nn">paddle_bfloat</span> <span class="c1"></span>
+
 
     <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 

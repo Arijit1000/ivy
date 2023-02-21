@@ -100,7 +100,10 @@
 <p class="caption" role="heading"><span class="caption-text">Utils</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils/backend.html">Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils/assertions.html">Assertions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utils/dynamic_import.html">Dynamic import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils/inspection.html">Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils/verbosity.html">Verbosity</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testing</span></p>
 <ul>
@@ -268,16 +271,16 @@
 <div class="viewcode-block" id="sigmoid"><a class="viewcode-back" href="../../../functional/ivy/activations/sigmoid/sigmoid_array.html#ivy.array.array_methods.sigmoid">[docs]</a><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Array instance method variant of ivy.sigmoid.</span>
-<span class="sd">    This method simply wraps the function, and so the docstring for ivy.sigmoid also applies to this method</span>
-<span class="sd">    with minimal changes.</span>
+<span class="sd">    This method simply wraps the function, and so the docstring for ivy.sigmoid also</span>
+<span class="sd">    applies to this method with minimal changes.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    self</span>
 <span class="sd">        Input array</span>
 <span class="sd">    out</span>
-<span class="sd">        optional output array for writing the result to. It must have the same shape the input broadcast to</span>
-<span class="sd">        default: None</span>
+<span class="sd">        optional output array for writing the result to. It must have the same shape</span>
+<span class="sd">        the input broadcast to default: None</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -477,6 +480,7 @@
 <span class="kn">from</span> <span class="nn">.statistical</span> <span class="kn">import</span> <span class="n">ArrayWithStatistical</span>
 <span class="kn">from</span> <span class="nn">.utility</span> <span class="kn">import</span> <span class="n">ArrayWithUtility</span>
 <span class="kn">from</span> <span class="nn">.experimental</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ivy.func_wrapper</span> <span class="kn">import</span> <span class="n">handle_view_indexing</span>
 
 
 
@@ -522,13 +526,14 @@
     <span class="n">ArrayWithStatisticalExperimental</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
     <span class="n">ArrayWithUtilityExperimental</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dynamic_backend</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_view_attributes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dynamic_backend</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_ivy_array</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_true</span><span class="p">(</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_true</span><span class="p">(</span>
             <span class="n">ivy</span><span class="o">.</span><span class="n">is_native_array</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s2">&quot;data must be native array&quot;</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
@@ -549,6 +554,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_backend</span> <span class="o">=</span> <span class="n">dynamic_backend</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dynamic_backend</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">get_dynamic_backend</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_view_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">base</span>
+    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;_base&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_base</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_base</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_view_refs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_manipulation_stack</span> <span class="o">=</span> <span class="p">[]</span>
 
 
 <span class="k">def</span> <span class="nf">dynamic_backend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -605,7 +621,7 @@
 <span class="sd">        ``(..., M, N)``, the returned array must have shape ``(..., N, M)``).</span>
 <span class="sd">        The returned array must have the same data type as the original array.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_greater</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">allow_equal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_greater</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">allow_equal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matrix_transpose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
 
@@ -634,12 +650,12 @@
 <span class="sd">        two-dimensional array whose first and last dimensions (axes) are</span>
 <span class="sd">        permuted in reverse order relative to original array.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_equal</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_equal</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matrix_transpose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="n">ivy</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_true</span><span class="p">(</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_true</span><span class="p">(</span>
         <span class="n">ivy</span><span class="o">.</span><span class="n">is_native_array</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s2">&quot;data must be native array&quot;</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -5234,6 +5250,7 @@
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 <span class="c1"># local</span>
 <span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">ivy</span> <span class="kn">import</span> <span class="n">handle_view</span>
 <span class="c1"># global</span>
 <span class="kn">import</span> <span class="nn">abc</span>
 <span class="c1"># global</span>
@@ -9629,11 +9646,11 @@
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="supports_inplace_updates"><a class="viewcode-back" href="../../../functional/ivy/general/supports_inplace_updates/supports_inplace_updates_array.html#ivy.array.array_methods.supports_inplace_updates">[docs]</a><span class="k">def</span> <span class="nf">supports_inplace_updates</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="supports_inplace_updates"><a class="viewcode-back" href="../../../functional/ivy/general/supports_inplace_updates/supports_inplace_updates_array.html#ivy.array.array_methods.supports_inplace_updates">[docs]</a><span class="k">def</span> <span class="nf">supports_inplace_updates</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Array instance method variant of ivy.supports_inplace_updates. This method</span>
-<span class="sd">    simply wraps the function, and so the docstring for ivy.supports_inplace also</span>
-<span class="sd">    applies to this method with minimal changes.</span>
+<span class="sd">    simply wraps the function, and so the docstring for ivy.supports_inplace_updates</span>
+<span class="sd">    also applies to this method with minimal changes.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -9648,7 +9665,14 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    With :class:`ivy.Array` input and default backend set as `numpy`:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([0, 1, 2])</span>
+<span class="sd">    &gt;&gt;&gt; ret = x.supports_inplace_updates()</span>
+<span class="sd">    &gt;&gt;&gt; print(ret)</span>
+<span class="sd">    True</span>
 <span class="sd">    With `ivy.Array` input and backend set as &quot;tensorflow&quot;:</span>
+
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([1., 4.2, 2.2])</span>
 <span class="sd">    &gt;&gt;&gt; ret = x.supports_inplace_updates()</span>
 <span class="sd">    &gt;&gt;&gt; print(ret)</span>
@@ -9822,7 +9846,7 @@
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="assert_supports_inplace"><a class="viewcode-back" href="../../../functional/ivy/general/assert_supports_inplace/assert_supports_inplace_array.html#ivy.array.array_methods.assert_supports_inplace">[docs]</a><span class="k">def</span> <span class="nf">assert_supports_inplace</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="assert_supports_inplace"><a class="viewcode-back" href="../../../functional/ivy/general/assert_supports_inplace/assert_supports_inplace_array.html#ivy.array.array_methods.assert_supports_inplace">[docs]</a><span class="k">def</span> <span class="nf">assert_supports_inplace</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Array instance method variant of ivy.assert_supports_inplace. This method</span>
 <span class="sd">    simply wraps the function, and so the docstring for ivy.assert_supports_inplace</span>
@@ -9836,7 +9860,23 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
-<span class="sd">        True if support, raises exception otherwise</span>
+<span class="sd">        True if supports, raises IvyBackendException otherwise</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :class:`ivy.Array` input and default backend set as `numpy`:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; print(x.assert_supports_inplace())</span>
+<span class="sd">    True</span>
+<span class="sd">    With :class:`ivy.Array` input and default backend set as `jax`:</span>
+
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; print(x.assert_supports_inplace())</span>
+<span class="sd">    IvyBackendException: jax: assert_supports_inplace: Inplace operations \</span>
+<span class="sd">    are not supported &lt;class &#39;jaxlib.xla_extension.DeviceArray&#39;&gt; types </span>
+<span class="sd">    with jax backend</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">assert_supports_inplace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
@@ -10919,6 +10959,48 @@
 <span class="sd">    ivy.array([[[2., 0, 2.]]])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dropout1d</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
+        <span class="n">prob</span><span class="p">,</span>
+        <span class="n">training</span><span class="o">=</span><span class="n">training</span><span class="p">,</span>
+        <span class="n">data_format</span><span class="o">=</span><span class="n">data_format</span><span class="p">,</span>
+        <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dropout3d</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="n">prob</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">training</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">data_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NDHWC&quot;</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Array instance method variant of ivy.dropout3d. This method simply</span>
+<span class="sd">    wraps the function, and so the docstring for ivy.droput3d also applies</span>
+<span class="sd">    to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">        The input array x to perform dropout on.</span>
+<span class="sd">    prob</span>
+<span class="sd">        The probability of zeroing out each array element, float between 0 and 1.</span>
+<span class="sd">    training</span>
+<span class="sd">        Turn on dropout if training, turn off otherwise. Default is ``True``.</span>
+<span class="sd">    data_format</span>
+<span class="sd">        &quot;NDHWC&quot; or &quot;NCDHW&quot;. Default is ``&quot;NDHWC&quot;``.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output array, for writing the result to. It must have</span>
+<span class="sd">        a shape that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Result array of the output after dropout is performed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dropout3d</span><span class="p">(</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
         <span class="n">prob</span><span class="p">,</span>
         <span class="n">training</span><span class="o">=</span><span class="n">training</span><span class="p">,</span>
@@ -12734,9 +12816,20 @@
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 <span class="c1"># local</span>
 <span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">ivy</span> <span class="kn">import</span> <span class="n">handle_view</span>
 <span class="c1"># ToDo: implement all methods here as public instance methods</span>
 
 
+
+
+<span class="k">def</span> <span class="nf">view</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Shape</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeShape</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">shape</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="concat"><a class="viewcode-back" href="../../../functional/ivy/manipulation/concat/concat_array.html#ivy.array.array_methods.concat">[docs]</a><span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
